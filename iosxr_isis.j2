@@ -1,0 +1,13 @@
+{% for conf in isis %}
+router isis core interface {{ conf.interface }} address-family ipv4 unicast
+router isis core interface {{ conf.interface }} circuit-type level-2-only
+router isis core interface {{ conf.interface }} bfd minimum-interval 15
+router isis core interface {{ conf.interface }} bfd multiplier 3
+router isis core interface {{ conf.interface }} bfd fast-detect ipv4
+router isis core interface {{ conf.interface }} point-to-point
+router isis core interface {{ conf.interface }} hello-padding disable
+router isis core interface {{ conf.interface }} hello-password keychain core
+router isis core interface {{ conf.interface }} address-family ipv4 unicast 
+router isis core interface {{ conf.interface }} address-family ipv4 unicast fast-reroute per-prefix level 2
+router isis core interface {{ conf.interface }} address-family ipv4 unicast fast-reroute per-prefix remote-lfa tunnel mpls-ldp level 2
+{% endfor  %}
