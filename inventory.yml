@@ -1,0 +1,13 @@
+############################
+---
+all:
+  children:
+    routers:
+      children:
+        iosxr_routers:
+          hosts:
+            ASR9922: 
+        junos_routers:
+          hosts:
+            MX2020-2:              
+                     
