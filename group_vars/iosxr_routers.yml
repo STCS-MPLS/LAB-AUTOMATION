@@ -1,0 +1,4 @@
+
+---
+ansible_network_os: "iosxr"
+ansible_host: "10.247.13.10"

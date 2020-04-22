@@ -1,0 +1,4 @@
+
+---
+ansible_network_os: "ne"
+ansible_host: "10.247.13.206"
