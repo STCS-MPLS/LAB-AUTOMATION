@@ -4,14 +4,11 @@
   connection: network_cli
   
   tasks:
-    - name: " import files from github repo"
-      git:
-        repo:  https://github.com/STCS-MPLS/LAB-AUTOMATION.git
-        dest: /home/Ansible/stc-lab/lab_automation-1
+    
   
     - name: " to Store differnet template from jinja "
       set_fact:
-        isis_path: "lab_automation-1/{{ ansible_network_os }}_isis.j2"
+        isis_path: "all/templates/{{ ansible_network_os }}_isis.j2"
       notify: config_changed
       register: cli_result
  
