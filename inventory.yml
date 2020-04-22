@@ -11,3 +11,6 @@ all:
           hosts:
             MX2020-2:              
                      
+        ne_routers:
+          hosts:
+             NE40-1:
