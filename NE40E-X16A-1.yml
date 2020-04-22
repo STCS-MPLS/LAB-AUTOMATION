@@ -1,0 +1,8 @@
+
+---
+isis:
+  -  name: "ansible_test"
+     interface: 100GE1/0/0
+     
+
+
