@@ -1,0 +1,11 @@
+{% for conf in isis %} 
+interface {{ conf.interface }} 
+isis enable 100
+isis circuit-type p2p
+isis circuit-level level-2
+isis authentication-mode keychain core
+isis cost 10
+isis small-hello
+isis bfd enable
+isis bfd min-tx-interval 15 min-rx-interval 15
+{% endfor  %}
