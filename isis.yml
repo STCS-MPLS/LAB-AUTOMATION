@@ -1,0 +1,30 @@
+---
+- name: " Configure isis on differnet plattform and import jinja files from github repo"
+  hosts: routers
+  connection: network_cli
+  
+  tasks:
+    - name: " import files from github repo"
+      git:
+        repo:  https://github.com/STCS-MPLS/LAB-AUTOMATION.git
+        dest: /home/Ansible/stc-lab/lab_automation-1
+  
+    - name: " to Store differnet template from jinja "
+      set_fact:
+        isis_path: "lab_automation-1/{{ ansible_network_os }}_isis.j2"
+      notify: config_changed
+      register: cli_result
+ 
+    - name: " to Apply isis on differnet plattform via ssh "
+      cli_config:
+        config: "{{ lookup('template',isis_path) }}"
+
+      notify: config_changed
+      register: cli_result
+      
+
+  handlers:
+    - name: " display changed "
+      listen: config_changed
+      debug:
+        msg: "{{ cli_result }}"
