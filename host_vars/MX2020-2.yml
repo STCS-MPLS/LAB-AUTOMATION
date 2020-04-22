@@ -1,0 +1,7 @@
+---
+isis:
+  -  name: "ansible_test"
+     interface: et-3/0/1.0
+     
+
+
