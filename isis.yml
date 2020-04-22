@@ -8,7 +8,6 @@
   
     - name: " to Store differnet template from jinja "
       set_fact:
-        isis_path: "all/templates/{{ ansible_network_os }}_isis.j2"
       notify: config_changed
       register: cli_result
  
