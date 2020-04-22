@@ -1,7 +1,0 @@
----
-isis:
-  -  name: "ansible_test"
-     interface: Hu0/6/0/1
-     
-
-
