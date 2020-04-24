@@ -9,8 +9,4 @@ all:
             ASR9922: 
         junos_routers:
           hosts:
-            MX2020-2:              
-                     
-        ne_routers:
-          hosts:
-             NE40-1:
+            MX2020-2:           
