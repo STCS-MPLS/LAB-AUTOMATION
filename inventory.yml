@@ -12,5 +12,5 @@ all:
             MX2020-2:          
         ne_routers:
           hosts:
-             
+            NE40E-X16A-1:
         
